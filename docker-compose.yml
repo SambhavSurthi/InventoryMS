@@ -22,7 +22,7 @@ services:
     image: sambhavsurthi/inventoryms-docker-backend:latest
     container_name: springboot
     ports:
-      - "8080:2000"
+      - "2025:2000"
     depends_on:
       mysqldb:
         condition: service_healthy
