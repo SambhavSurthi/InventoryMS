@@ -285,9 +285,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Team
 
-- **Sambhav Surthi** - Full Stack Developer
-- **Adiseshu** - Backend Developer
-- **Sravani** - Frontend Developer
+- **Sambhav Surthi** 
+- **Adiseshu** 
+- **Sravani** 
 
 ## 📞 Support
 
