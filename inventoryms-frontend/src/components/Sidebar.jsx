@@ -41,11 +41,24 @@ const Sidebar = () => {
       roles: ['ADMIN', 'MANAGER', 'SALES']
     },
     {
-      name: 'Users',
-      href: '/app/users',
-      icon: Users,
-      roles: ['ADMIN']
+      name: 'Inventory',
+      href: '/app/inventory',
+      icon: BarChart3,
+      roles: ['MANAGER', 'ADMIN']
     },
+    {
+      name: 'Sales',
+      href: '/app/sales',
+      icon: TrendingUp,
+      roles: ['SALES', 'ADMIN']
+    },
+    {
+      name: 'Orders',
+      href: '/app/orders',
+      icon: ShoppingCart,
+      roles: ['SALES', 'ADMIN']
+    },
+    
     {
       name: 'Categories',
       href: '/app/categories',
@@ -59,22 +72,10 @@ const Sidebar = () => {
       roles: ['ADMIN', 'MANAGER', 'SALES']
     },
     {
-      name: 'Orders',
-      href: '/app/orders',
-      icon: ShoppingCart,
-      roles: ['SALES', 'ADMIN']
-    },
-    {
-      name: 'Inventory',
-      href: '/app/inventory',
-      icon: BarChart3,
-      roles: ['MANAGER', 'ADMIN']
-    },
-    {
-      name: 'Sales',
-      href: '/app/sales',
-      icon: TrendingUp,
-      roles: ['SALES', 'ADMIN']
+      name: 'Users',
+      href: '/app/users',
+      icon: Users,
+      roles: ['ADMIN']
     },
     {
       name: 'Profile',

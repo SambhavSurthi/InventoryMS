@@ -8,6 +8,7 @@ import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { Package, Plus, Edit, Trash2, Search, Package2, AlertTriangle, TrendingUp, TrendingDown } from 'lucide-react';
 import { useToast } from '../contexts/ToastContext';
+import { IndianRupee } from "lucide-react";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -479,10 +480,15 @@ const Products = () => {
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-500">Price:</span>
-                        <span className="font-medium">${parseFloat(product.price).toFixed(2)}</span>
+                        <div className='flex  items-center justify-center' >
+                          <IndianRupee className="h-4 w-4 text-black" />
+                          <span className="font-medium">{parseFloat(product.price).toFixed(2)}</span>
+                        </div>
+                       
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-500">Stock:</span>
+                        
                         <span className="font-medium">{product.stockQuantity} {product.unit}</span>
                       </div>
                       {product.brand && (

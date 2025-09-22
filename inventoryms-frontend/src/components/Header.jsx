@@ -2,9 +2,11 @@ import { useSelector } from 'react-redux';
 import { Bell, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
@@ -20,10 +22,10 @@ const Header = () => {
             </div>
           </div>
           
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
+          <div className="flex items-center space-x-4 cursor-pointer" onClick={() => navigate('/app/profile')}>
+            {/* <Button variant="ghost" size="icon">
               <Bell className="h-5 w-5" />
-            </Button>
+            </Button> */}
             
             <div className="flex items-center space-x-3">
               <div className="text-right">
@@ -31,7 +33,7 @@ const Header = () => {
                   {user?.firstName} {user?.lastName}
                 </p>
                 <p className="text-xs text-gray-500 capitalize">
-                  {user?.role?.displayName || user?.role?.name || 'User'}
+                  {user?.role || 'User'}
                 </p>
               </div>
               <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
