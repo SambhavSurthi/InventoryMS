@@ -1,3 +1,4 @@
+# 
 services:
   mysqldb:
     image: mysql:8
@@ -11,6 +12,11 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - springboot-mysql-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+      start_period: 30s
 
   backend:
     image: sambhavsurthi/inventoryms-docker-backend:latest
@@ -18,10 +24,15 @@ services:
     ports:
       - "2025:2000"
     depends_on:
-      - mysqldb
+      mysqldb:
+        condition: service_healthy
     restart: on-failure
     networks:
       - springboot-mysql-net
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/inventory_ms?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - spring.datasource.username=root
+      - spring.datasource.password=docker
 
   frontend:
     image: sambhavsurthi/inventoryms-docker-frontend:latest
