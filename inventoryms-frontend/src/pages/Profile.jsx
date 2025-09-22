@@ -158,11 +158,11 @@ const Profile = () => {
               </h2>
               <p className="text-gray-600">@{user?.username}</p>
               <div className="flex items-center space-x-2 mt-1">
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRoleBadgeColor(user?.role?.name)}`}>
-                  {user?.role?.name}
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRoleBadgeColor(user?.role)}`}>
+                  {user?.role}
                 </span>
                 <span className="text-xs text-gray-500">
-                  {getRoleDescription(user?.role?.name)}
+                  {getRoleDescription(user?.role)}
                 </span>
               </div>
             </div>
